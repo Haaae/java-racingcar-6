@@ -23,11 +23,11 @@ public class InputView {
         return carNames;
     }
 
-    public long readMoveTryCount() {
+    public int readMoveTryCount() {
         Notice.MOVE_TRY_COUNT.print();
 
         String input = Console.readLine();
         validator.isOnlyNumber(input, Exception.INVALID_INPUT);
-        return Long.parseLong(input);
+        return Integer.parseInt(input);
     }
 }
