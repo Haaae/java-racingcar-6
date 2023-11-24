@@ -25,7 +25,7 @@ public class RaceManager {
 
     public void moveAll(final RandomRaceNumberGenerator generator, final int moveTryCount, final Validator validator) {
         roster.forEach(car ->
-                    moveCar(generator, moveTryCount, validator, car);
+                    moveCar(generator, moveTryCount, validator, car)
         );
     }
 
