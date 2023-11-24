@@ -38,6 +38,20 @@ public class Validator {
     }
 
     /**
+     * 리스트 길이가 최대값보다 크거나 최솟값보다 작다면 예외 발생
+     */
+    public void isValidRange(
+            final int target,
+            final int maximumSize,
+            final int minimumSize,
+            final Exception e
+    ) {
+        if (maximumSize < target || target < minimumSize) {
+            e.throwNew();
+        }
+    }
+
+    /**
      * 리스트 길이가 최대값보다 크다면 예외 발생
      */
     public void isOverSize(final List<?> target, final int maximumSize, final Exception e) {
