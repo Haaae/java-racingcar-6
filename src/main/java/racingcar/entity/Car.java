@@ -7,12 +7,13 @@ import racingcar.validator.Validator;
 public class Car extends Entity {
 
     public static final int MAXIMUM_NAME_SIZE = 5;
+    public static final int MINIMUM_NAME_SIZE = 1;
 
     private final Long id;
     private final String name;
 
     public Car(final String name, final Validator validator) {
-        validator.isOverSize(name, MAXIMUM_NAME_SIZE, Exception.INVALID_INPUT);
+        validator.isValidSize(name, MAXIMUM_NAME_SIZE, MINIMUM_NAME_SIZE, Exception.INVALID_INPUT);
 
         this.name = name;
         this.id = getNextId();
