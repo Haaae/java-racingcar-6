@@ -41,7 +41,25 @@ public class Validator {
      * 리스트 길이가 최대값보다 크다면 예외 발생
      */
     public void isOverSize(final List<?> target, final int maximumSize, final Exception e) {
-        if (target.size() > maximumSize) {
+        isValidSize(
+                target,
+                maximumSize,
+                0,
+                e
+        );
+    }
+
+    /**
+     * 리스트 길이가 최대값보다 크거나 최솟값보다 작다면 예외 발생
+     */
+    public void isValidSize(
+            final List<?> target,
+            final int maximumSize,
+            final int minimumSize,
+            final Exception e
+    ) {
+        int size = target.size();
+        if (maximumSize < size || size < minimumSize) {
             e.throwNew();
         }
     }
@@ -87,10 +105,28 @@ public class Validator {
     }
 
     /**
-     * 리스트 길이가 최대값보다 크다면 예외 발생
+     * 문자열 길이가 최대값보다 크다면 예외 발생
      */
     public void isOverSize(final String target, final int maximumSize, final Exception e) {
-        if (target.length() > maximumSize) {
+        isValidSize(
+                target,
+                maximumSize,
+                0,
+                e
+        );
+    }
+
+    /**
+     * 문자열 길이가 최대값보다 크거나 최솟값보다 작다면 예외 발생
+     */
+    public void isValidSize(
+            final String target,
+            final int maximumSize,
+            final int minimumSize,
+            final Exception e
+    ) {
+        int size = target.length();
+        if (maximumSize < size || size < minimumSize) {
             e.throwNew();
         }
     }
