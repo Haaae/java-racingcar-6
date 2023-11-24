@@ -38,6 +38,15 @@ public class Validator {
     }
 
     /**
+     * 리스트 길이가 최대값보다 크다면 예외 발생
+     */
+    public void isOverSize(final List<?> target, final int maximumSize, final Exception e) {
+        if (target.size() > maximumSize) {
+            e.throwNew();
+        }
+    }
+
+    /**
      * 특정 요소가 포함되어 있지 않다면 예외가 발생. List.contains()를 사용한다.
      */
     public <E> void contains(List<E> target, E element, Exception e) {
@@ -77,6 +86,14 @@ public class Validator {
         }
     }
 
+    /**
+     * 리스트 길이가 최대값보다 크다면 예외 발생
+     */
+    public void isOverSize(final String target, final int maximumSize, final Exception e) {
+        if (target.length() > maximumSize) {
+            e.throwNew();
+        }
+    }
 
     /**
      * 문자열에 중복된 문자가 있다면 예외 발생
