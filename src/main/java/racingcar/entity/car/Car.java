@@ -1,6 +1,7 @@
-package racingcar.entity;
+package racingcar.entity.car;
 
 import java.util.Objects;
+import racingcar.entity.Entity;
 import racingcar.exception.Exception;
 import racingcar.validator.Validator;
 

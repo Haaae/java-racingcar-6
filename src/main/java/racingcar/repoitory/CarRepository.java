@@ -1,6 +1,6 @@
 package racingcar.repoitory;
 
-import racingcar.entity.Car;
+import racingcar.entity.car.Car;
 
 public class CarRepository extends Repoitory<Car> {
 
